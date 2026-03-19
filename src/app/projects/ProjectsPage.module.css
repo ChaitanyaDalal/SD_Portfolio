@@ -1,0 +1,366 @@
+/* ── Page shell ─────────────────────────────────────── */
+.main {
+  min-height: 100vh;
+  background-color: var(--darkBg);
+  position: relative;
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+/* Blueprint crosshatch */
+.blueprintBg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.blueprintBg::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: 50%;
+  border-left: 1px dashed rgba(255,255,255,0.06);
+}
+
+/* ── Container ─────────────────────────────────────── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Back nav ──────────────────────────────────────── */
+.backNav {
+  margin-bottom: 2rem;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--textDark);
+  font-size: 0.78rem;
+  background: rgba(255,255,255,0.04);
+  padding: 6px 14px;
+  border-radius: 99px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.backLink:hover {
+  color: var(--textLight);
+  background: rgba(255,255,255,0.08);
+}
+
+/* ── Page header ───────────────────────────────────── */
+.pageHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.overline {
+  font-family: var(--font-geist-mono);
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  color: var(--textDark);
+  display: block;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+/* Match reference: "Curated Work" — moderate size, centered */
+.mainTitle {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 500;
+  color: var(--textLight);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.titleAccent {
+  font-family: var(--font-playfair);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent);
+}
+
+/* ── Masonry grid ──────────────────────────────────── */
+.masonryGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.gridCol {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* ── Project card ──────────────────────────────────── */
+.projectCard {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Meta: 01 ——— WEB APP           Q4 2024 */
+.projectMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  font-family: var(--font-geist-mono);
+  font-size: 0.65rem;
+  color: var(--textDark);
+  border-bottom: 1px dashed rgba(255,255,255,0.07);
+  padding-bottom: 0.6rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.metaLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.metaNum { color: rgba(255,255,255,0.4); }
+.metaDash { color: rgba(255,255,255,0.15); letter-spacing: -1px; }
+.metaType { color: rgba(255,255,255,0.55); }
+
+.metaDate {
+  background: rgba(255,255,255,0.05);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Project title – bold sans-serif, like reference "Nextdemy", "Finote" */
+.projectTitle {
+  font-family: var(--font-geist-sans);
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  color: var(--textLight);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+}
+
+/* 3D tilt wrapper */
+.cardLink {
+  display: block;
+  margin-bottom: 1rem;
+  perspective: 1200px;
+}
+
+/* The colour card */
+.imageBlock {
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1rem 1rem 0 1rem;
+  text-decoration: none;
+  transition: box-shadow 0.4s ease;
+}
+
+/* Grain texture */
+.noiseOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.07'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+
+/* Description row inside card */
+.cardInfo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.cardDesc {
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 88%;
+}
+
+.cardArrowWrap {
+  color: rgba(255,255,255,0.75);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Cursor-following VIEW DETAILS */
+.viewCircle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  pointer-events: none;
+  z-index: 20;
+}
+
+.viewSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Eye — perfectly centred inside the circle */
+.viewEye {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.viewSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Eye perfectly centred inside the circle */
+.viewEye {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* Screenshot */
+.imageWrapper {
+  position: relative;
+  width: 78%;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;   /* natural ratio, no cropping */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 -6px 24px rgba(0,0,0,0.35);
+  z-index: 2;
+}
+
+.projectImage {
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s ease;
+}
+.imageBlock:hover .projectImage { transform: scale(1.03); }
+
+.placeholderImg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+.placeholderImg span {
+  font-size: 3rem;
+  color: rgba(255,255,255,0.12);
+  font-weight: 800;
+  letter-spacing: -4px;
+}
+.placeholderImg p {
+  font-family: var(--font-geist-mono);
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+}
+
+/* ── Tech pills – rectangular, no slash, like reference ── */
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.techPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 4px 10px;
+  border-radius: 6px;       /* rectangular, matches reference */
+  color: var(--textDark);
+  font-size: 0.68rem;
+  font-family: var(--font-geist-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.techPill:hover {
+  border-color: rgba(255,255,255,0.25);
+  color: var(--textLight);
+}
+
+/* ── Footer ─────────────────────────────────────────── */
+.footerHint {
+  text-align: center;
+  margin-top: 4rem;
+  color: var(--textDark);
+  font-size: 0.82rem;
+}
+.footerHint a {
+  color: var(--textLight);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 1px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.footerHint a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  .masonryGrid { grid-template-columns: 1fr; gap: 4rem; }
+  .gridCol:nth-child(2) { margin-top: 0 !important; }
+  .blueprintBg::after { display: none; }
+}
+
+@media (max-width: 560px) {
+  .container { padding: 0 1rem; }
+}

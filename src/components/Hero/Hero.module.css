@@ -1,0 +1,139 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.bottomGlow {
+  position: absolute;
+  bottom: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150vw;
+  height: 60vh;
+  background: radial-gradient(ellipse at top, rgba(50, 200, 255, 0.2) 0%, rgba(200, 100, 255, 0.12) 30%, transparent 70%);
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.content {
+  max-width: 860px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Status pill – centred */
+.pillsWrapper {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--cardDark);
+  border: 1px solid var(--cardBorder);
+  padding: 5px 12px;
+  border-radius: 99px;
+  font-size: 0.78rem;
+  color: var(--textLight);
+  backdrop-filter: blur(10px);
+}
+
+.pulseDot {
+  width: 7px;
+  height: 7px;
+  background-color: #00ff66;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #00ff66;
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%   { opacity: 1; transform: scale(1); }
+  50%  { opacity: 0.5; transform: scale(1.2); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.title {
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+}
+
+.introBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+  color: var(--textDark);
+  margin-bottom: 2rem;
+}
+
+.avatarWrapper {
+  width: 40px;
+  height: 28px;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 12px rgba(100, 100, 255, 0.2);
+}
+
+.avatar {
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.actions {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.primaryBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: rgba(255,255,255,0.05);
+  color: var(--textLight);
+  border: 1px solid var(--cardBorder);
+  padding: 0.7rem 1.5rem;
+  border-radius: 99px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.primaryBtn:hover {
+  background-color: rgba(255,255,255,0.1);
+  transform: translateY(-2px);
+}
+
+.secondaryLink {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--textDark);
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.secondaryLink:hover {
+  color: var(--textLight);
+}

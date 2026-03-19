@@ -1,0 +1,129 @@
+.about {
+  padding: 80px 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header {
+  margin-bottom: 3rem;
+}
+
+.overline {
+  color: var(--textDark);
+  font-family: var(--font-geist-mono);
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 500;
+  color: var(--textLight);
+  line-height: 1.15;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  color: var(--textDark);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.textContent p strong {
+  color: var(--textLight);
+}
+
+.socialAuth {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1.2rem;
+  font-family: var(--font-geist-mono);
+  font-size: 0.82rem;
+  color: var(--textLight);
+}
+
+.bentoGraphic {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 2rem;
+}
+
+.glowingBorder {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  background: var(--darkBg);
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--cardBorder);
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.04),
+              0 20px 60px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.glowingBorder::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent 0 340deg, rgba(255,255,255,0.2) 360deg);
+  animation: rotate 6s linear infinite;
+}
+
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
+}
+
+.bentoLogoWrapper {
+  position: absolute;
+  top: 4px; left: 4px; right: 4px; bottom: 4px;
+  background: var(--darkBg);
+  border-radius: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.fakeLogo {
+  font-size: 6rem;
+  font-weight: 800;
+  color: var(--textLight);
+  letter-spacing: -5px;
+  text-shadow: 0 0 40px rgba(255,255,255,0.25);
+}
+
+@media (max-width: 968px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .bentoGraphic {
+    padding-left: 0;
+  }
+}

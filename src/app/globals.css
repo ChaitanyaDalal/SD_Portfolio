@@ -1,0 +1,57 @@
+:root {
+  --primary: #ffffff;
+  --accent: #d946ef;
+  --darkBg: #050505;
+  --cardDark: rgba(255, 255, 255, 0.03);
+  --cardBorder: rgba(255, 255, 255, 0.08);
+  --textLight: #ededed;
+  --textDark: #a1a1aa;
+}
+
+html, body {
+  background-color: var(--darkBg);
+  color: var(--textLight);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: var(--font-geist-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: var(--textLight);
+  color: var(--darkBg);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--darkBg);
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Utility to mix fonts */
+.serifItalic {
+  font-family: var(--font-playfair), serif;
+  font-style: italic;
+  font-weight: 300;
+}
