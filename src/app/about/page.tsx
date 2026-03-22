@@ -21,8 +21,8 @@ export default function AboutPage() {
             About <span className="serifItalic" style={{ color: "var(--accent)" }}>Me</span>
           </h1>
         </div>
-        
-        <div style={{color: 'var(--textDark)', textAlign: 'center', fontSize: '1.2rem'}}>
+
+        <div style={{ color: 'var(--textDark)', textAlign: 'center', fontSize: '1.2rem' }}>
           (About page content placeholder - tell me if you want this built out next!)
         </div>
       </div>

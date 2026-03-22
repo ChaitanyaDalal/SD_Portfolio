@@ -11,13 +11,13 @@ export default function Hero() {
     <section id="home" className={styles.hero}>
       {/* Optional: You can keep your ThreeScene beneath the text or place it somewhere else */}
       <ThreeScene />
-      
+
       {/* Bottom Glowing gradient sphere/planet effect */}
       <div className={styles.bottomGlow}></div>
 
       <div className={styles.content} style={{ zIndex: 1, position: "relative" }}>
-        
-        <motion.div 
+
+        <motion.div
           className={styles.pillsWrapper}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -28,8 +28,8 @@ export default function Hero() {
             <span>Available for new opportunities</span>
           </div>
         </motion.div>
-        
-        <motion.h1 
+
+        <motion.h1
           className={styles.title}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -40,20 +40,21 @@ export default function Hero() {
           Engineering that <span className="serifItalic">actually ships.</span>
         </motion.h1>
 
-        <motion.div 
+        <motion.div
           className={styles.introBadge}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <span>Hello, I'm Chaitanya</span>
-          <div className={styles.avatarWrapper}>
-            <Image src="/images/dp.jpg" alt="Chaitanya" fill className={styles.avatar} unoptimized />
-          </div>
+          <span>Hello, I'm</span>
+          {/* <div className={styles.avatarWrapper}> */}
+          {/* <Image src="/images/dp.jpg" alt="Chaitanya" fill className={styles.avatar} unoptimized /> */}
+          {/* </div> */}
+          <span style={{ fontWeight: "bold", color: "var(--primary)", fontSize: "1.2rem", marginLeft: "0.5rem", marginRight: "0.5rem", fontFamily: "'Playfair Display', serif" }}>Chaitanya</span>
           <span>a Full Stack Developer</span>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className={styles.actions}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

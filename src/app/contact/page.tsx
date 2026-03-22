@@ -21,8 +21,8 @@ export default function ContactPage() {
             Contact <span className="serifItalic" style={{ color: "var(--accent)" }}>Me</span>
           </h1>
         </div>
-        
-        <div style={{color: 'var(--textDark)', textAlign: 'center', fontSize: '1.2rem'}}>
+
+        <div style={{ color: 'var(--textDark)', textAlign: 'center', fontSize: '1.2rem' }}>
           (Contact page content placeholder - we'll build out your calendar/form here!)
         </div>
       </div>

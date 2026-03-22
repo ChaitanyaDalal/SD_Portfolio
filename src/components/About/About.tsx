@@ -1,13 +1,23 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import styles from "./About.module.css";
-import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const AboutScene = dynamic(() => import("./AboutScene"), {
+  ssr: false,
+  loading: () => <div style={{ width: '100%', height: '100%', background: '#050505' }} />
+});
 
 export default function About() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   return (
     <section id="about" className={styles.about} ref={ref}>
@@ -35,7 +45,7 @@ export default function About() {
             I'm Chaitanya, a proactive full-stack developer passionate about creating dynamic web experiences. From frontend to backend, I thrive on solving complex problems with clean, efficient code. My expertise spans React, Next.js, and Node.js.
           </p>
           <p>
-            In addition to pursuing a Minor in CSE from IIT Mandi, I hold an Advanced Diploma in Website Engineering. When I'm not immersed in code, I'm exploring new ideas and staying curious.
+            I hold an Advanced Diploma in Website Engineering and I'm currently pursuing a Minor in CSE from IIT Mandi.
           </p>
           <p>
             I believe in waking up each day eager to make a difference!
@@ -47,20 +57,52 @@ export default function About() {
           </div>
         </motion.div>
 
-        {/* Bento Grid Glowing 3D element placeholder */}
-        <motion.div
-          className={styles.bentoGraphic}
-          initial={{ opacity: 0, x: 30 }}
-          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <div className={styles.glowingBorder}>
-            <div className={styles.bentoLogoWrapper}>
-              {/* Replace with a 3D Canvas later! */}
-              <div className={styles.fakeLogo}>CD</div>
+        <div className={styles.bentoContainer}>
+
+
+          <motion.div
+            className={styles.photoCard}
+            style={{ backgroundColor: '#050505', position: 'relative', overflow: 'hidden' }}
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={isInView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.9, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <div className={styles.glassPhoto} style={{ backgroundColor: '#050505', height: '100%', width: '100%' }}>
+              <img
+                src="/images/DP.jpg"
+                alt="Chaitanya"
+                className={styles.dpImage}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                loading="eager"
+                fetchPriority="high"
+                onError={(e) => {
+                  // Emergency fallback JUST in case, but trailingSlash fix should handle it
+                  console.log("Image load fail, attempting path correction...");
+                  (e.target as any).src = "./images/DP.jpg";
+                }}
+              />
+              <div className={styles.glassShimmer} />
+              <div className={styles.floatingTag}>V-2025</div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+
+          {/* Bottom Card: Audio Core */}
+          <motion.div
+            className={styles.gemCard}
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={isInView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.9, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <div className={styles.gemOverlay}>
+              <span style={{ color: '#fff', fontSize: '0.65rem' }}>3D CORE POWERED BY REACT THREE FIBER</span>
+            </div>
+
+            <div className={styles.gemContainer}>
+              {hasMounted && <AboutScene />}
+            </div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );

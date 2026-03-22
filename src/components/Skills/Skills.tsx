@@ -42,7 +42,7 @@ export default function Skills() {
           </div>
           <div className={styles.avatarGlowWrapper}>
             <div className={styles.avatarImg}>
-               <Image src="/images/dp.jpg" alt="Me" fill style={{objectFit: 'cover'}} unoptimized />
+              <Image src="/images/dp.jpg" alt="Me" fill style={{ objectFit: 'cover' }} unoptimized />
             </div>
           </div>
           <div className={styles.collabText}>
@@ -57,7 +57,7 @@ export default function Skills() {
           <div className={styles.techContent}>
             <span className={styles.overline}>TECH STACK</span>
             <h3>Tools I ship production code with</h3>
-            
+
             <div className={styles.pillsContainer}>
               {techStack.map((tech, i) => (
                 <div key={i} className={styles.techPill}>
@@ -66,19 +66,19 @@ export default function Skills() {
                 </div>
               ))}
             </div>
-            
+
             <div className={styles.bottomGraphic}>
-               <div className={styles.fakeWindow}>
-                 <div className={styles.windowHeader}>
-                   <span className={styles.dot}></span><span className={styles.dot}></span><span className={styles.dot}></span>
-                   <div className={styles.urlBar}>chaitanyadalal.me</div>
-                 </div>
-                 <div className={styles.windowBody}>
-                   <div className={styles.searchIcon}>🔍</div>
-                   <h4>Built to Perform.</h4>
-                   <p>Websites that impact your business.</p>
-                 </div>
-               </div>
+              <div className={styles.fakeWindow}>
+                <div className={styles.windowHeader}>
+                  <span className={styles.dot}></span><span className={styles.dot}></span><span className={styles.dot}></span>
+                  <div className={styles.urlBar}>chaitanyadalal.me</div>
+                </div>
+                <div className={styles.windowBody}>
+                  <div className={styles.searchIcon}>🔍</div>
+                  <h4>Built to Perform.</h4>
+                  <p>Websites that impact your business.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function Skills() {
           </div>
           <div className={styles.badges}>
             <span className={styles.badge}>🇬🇧 UK</span>
-            <span className={styles.badge} style={{borderColor: 'var(--primary)'}}>🇮🇳 INDIA</span>
+            <span className={styles.badge} style={{ borderColor: 'var(--primary)' }}>🇮🇳 INDIA</span>
             <span className={styles.badge}>🇺🇸 USA</span>
           </div>
           {/* Glowing Fake Globe */}

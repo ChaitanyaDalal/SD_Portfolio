@@ -5,12 +5,12 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./Navbar.module.css";
+import AudioControls from "../Navigation/AudioControls";
 
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Work", href: "/projects" },
-  { name: "Blog", href: "/blog" },
 ];
 
 export default function Navbar() {
@@ -52,15 +52,14 @@ export default function Navbar() {
                 </Link>
               );
             })}
-            
-            <div className={styles.moreDropdown}>
-              More <span className={styles.chevron}>▾</span>
-            </div>
           </div>
 
-          <Link href="/contact" className={styles.ctaButton}>
-            Book a Call
-          </Link>
+          <div className={styles.navbarRight}>
+            <AudioControls />
+            <Link href="/contact" className={styles.ctaButton}>
+              Book a Call
+            </Link>
+          </div>
         </div>
       </motion.nav>
     </div>

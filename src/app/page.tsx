@@ -15,8 +15,7 @@ export default function Home() {
   const [heroVisible, setHeroVisible] = useState(false);
 
   useEffect(() => {
-    // Skip Intro flawlessly if user is on Mobile/Tablet or has already watched it this session!
-    if (sessionStorage.getItem("introSeen") || window.innerWidth < 1024) {
+    if (sessionStorage.getItem("introSeen") || (typeof window !== "undefined" && window.innerWidth < 1024)) {
       setIntroDone(true);
       setHeroVisible(true);
     }
@@ -28,7 +27,6 @@ export default function Home() {
   };
 
   const preFinishIntro = () => {
-    // Fires early! Forces ThreeJS shaders and heavy Framer animations to quietly compile IN THE BACKGROUND before the Macbook sequence even finishes. Completely eliminates visual lag jumping.
     setHeroVisible(true);
   };
 

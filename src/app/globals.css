@@ -1,6 +1,6 @@
 :root {
   --primary: #ffffff;
-  --accent: #d946ef;
+  --accent: #00f7ff; /* Neon Blue as the primary accent now */
   --darkBg: #050505;
   --cardDark: rgba(255, 255, 255, 0.03);
   --cardBorder: rgba(255, 255, 255, 0.08);
@@ -17,6 +17,31 @@ html, body {
   scroll-behavior: smooth;
   font-family: var(--font-geist-sans), sans-serif;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* --- THE GLOBAL DOTTED BACKGROUND --- */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
+  background-size: 32px 32px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Subtle gradient pulse for depth */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(circle at 50% 50%, transparent, rgba(0, 0, 0, 0.8));
+  z-index: -2;
+  pointer-events: none;
 }
 
 a {
