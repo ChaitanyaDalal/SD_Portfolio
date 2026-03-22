@@ -11,7 +11,7 @@ export default function AudioControls() {
 
   useEffect(() => {
     // Correct Path: /audio/music.mp3
-    const audio = new Audio("/audio/music.mp3");
+    const audio = new Audio("/Audio/music.mp3");
     audio.loop = true;
     audio.volume = 0.35;
     audioRef.current = audio;
