@@ -42,7 +42,7 @@ export default function Skills() {
           </div>
           <div className={styles.avatarGlowWrapper}>
             <div className={styles.avatarImg}>
-              <Image src="/images/dp.jpg" alt="Me" fill style={{ objectFit: 'cover' }} unoptimized />
+              <Image src="/images/DP.jpg" alt="Me" fill style={{ objectFit: 'cover' }} unoptimized />
             </div>
           </div>
           <div className={styles.collabText}>
@@ -86,8 +86,8 @@ export default function Skills() {
         {/* Box 2: Timezones */}
         <div className={`${styles.bentoBox} ${styles.timezoneBox}`}>
           <div className={styles.timezoneText}>
-            <p className="serifItalic">Flexible with time</p>
-            <p className="serifItalic">zone communications</p>
+            <p className="serifItalic">Timezone flexible,</p>
+            <p className="serifItalic">always reachable</p>
           </div>
           <div className={styles.badges}>
             <span className={styles.badge}>🇬🇧 UK</span>

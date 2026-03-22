@@ -137,3 +137,42 @@
 .secondaryLink:hover {
   color: var(--textLight);
 }
+@media (max-width: 768px) {
+  .hero {
+    padding: 0 1.5rem;
+    padding-top: 100px;
+    align-items: flex-start;
+    text-align: center;
+  }
+
+  .content {
+    align-items: center;
+  }
+
+  .title {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .introBadge {
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .primaryBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bottomGlow {
+    bottom: -20%;
+    height: 40vh;
+  }
+}

@@ -53,7 +53,8 @@
   transition: all 0.3s ease;
 }
 
-.navLink:hover, .active {
+.navLink:hover,
+.active {
   color: var(--textLight);
   background: rgba(255, 255, 255, 0.1);
 }
@@ -83,11 +84,40 @@
 
 .ctaButton:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 768px) {
   .navbar {
-    min-width: 90%;
+    min-width: 95%;
+    padding: 4px 8px;
+  }
+
+  .container {
+    gap: 0.5rem;
+  }
+
+  .navLink {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+
+  .navbarRight {
+    gap: 0.8rem;
+  }
+
+  .ctaButton {
+    padding: 8px 14px;
+    font-size: 0.75rem;
   }
 }
+
+/* @media (max-width: 480px) {
+  .links a:nth-child(3) {
+    display: none;
+  }
+  
+  .navbar {
+    border-radius: 20px;
+  }
+} */
