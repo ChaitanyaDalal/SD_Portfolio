@@ -69,16 +69,14 @@ export default function About() {
           >
             <div className={styles.glassPhoto} style={{ backgroundColor: '#050505', height: '100%', width: '100%' }}>
               <img
-                src="/images/DP.jpg"
+                src="/images/dp.jpg"
                 alt="Chaitanya"
                 className={styles.dpImage}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 loading="eager"
                 fetchPriority="high"
                 onError={(e) => {
-                  // Emergency fallback JUST in case, but trailingSlash fix should handle it
-                  console.log("Image load fail, attempting path correction...");
-                  (e.target as any).src = "./images/DP.jpg";
+                  (e.currentTarget as HTMLImageElement).style.display = "none";
                 }}
               />
               <div className={styles.glassShimmer} />

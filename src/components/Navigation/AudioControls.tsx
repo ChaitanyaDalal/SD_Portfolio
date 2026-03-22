@@ -18,8 +18,8 @@ export default function AudioControls() {
 
     const startAudio = () => {
       if (audioRef.current && !isPlaying) {
-        audioRef.current.play().catch((err) => {
-          console.log("Audio waiting for user interaction...", err);
+        audioRef.current.play().catch(() => {
+          // Audio play requires user interaction; will start on first click
         });
         setIsPlaying(true);
       }

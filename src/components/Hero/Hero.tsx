@@ -47,9 +47,6 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <span>Hello, I'm</span>
-          {/* <div className={styles.avatarWrapper}> */}
-          {/* <Image src="/images/dp.jpg" alt="Chaitanya" fill className={styles.avatar} unoptimized /> */}
-          {/* </div> */}
           <span style={{ fontWeight: "bold", color: "var(--primary)", fontSize: "1.2rem", marginLeft: "0.5rem", marginRight: "0.5rem", fontFamily: "'Playfair Display', serif" }}>Chaitanya</span>
           <span>a Full Stack Developer</span>
         </motion.div>
