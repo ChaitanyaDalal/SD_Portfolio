@@ -42,7 +42,7 @@ export default function Skills() {
           </div>
           <div className={styles.avatarGlowWrapper}>
             <div className={styles.avatarImg}>
-              <Image src="/images/dp.jpg" alt="Me" fill style={{ objectFit: 'cover' }} unoptimized />
+              <Image src="/images/DP.jpg" alt="Me" fill style={{ objectFit: 'cover' }} unoptimized />
             </div>
           </div>
           <div className={styles.collabText}>

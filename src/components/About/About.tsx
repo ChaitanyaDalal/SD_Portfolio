@@ -69,7 +69,7 @@ export default function About() {
           >
             <div className={styles.glassPhoto} style={{ backgroundColor: '#050505', height: '100%', width: '100%' }}>
               <img
-                src="/images/dp.jpg"
+                src="/images/DP.jpg"
                 alt="Chaitanya"
                 className={styles.dpImage}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
